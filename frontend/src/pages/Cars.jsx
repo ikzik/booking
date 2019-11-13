@@ -10,14 +10,16 @@ import {connect} from 'react-redux';
 import { updateCars } from '../redux/reducers/carsReducer';
 import { updateSuppliers } from '../redux/reducers/suppliersReducer';
 import { updateCompanies } from '../redux/reducers/companiesReducer';
-
+import { updatePriceSort } from '../redux/reducers/priceSortReducer';
 
 import Header from '../components/Header.jsx';
 import Filter from '../components/Filter.jsx';
+import Found from '../components/Found.jsx';
+import CarInfo from '../components/CarInfo.jsx';
 
 const Cars = (props) => {
     const ITEMS_PER_PAGE = 10;
-    const getRequest = {offset: ITEMS_PER_PAGE * 1, limit: ITEMS_PER_PAGE},
+    const getRequest = {offset: ITEMS_PER_PAGE * 0, limit: ITEMS_PER_PAGE},
     { data: dataR, loading: loadingR } = useQuery(getSuppliers, {
       onCompleted: data => {
         console.log(data.suppliers);
@@ -25,7 +27,7 @@ const Cars = (props) => {
       }
     }),
     { data, loading, error, refetch } = useQuery(getCars, {
-      variables: { req: getRequest, sort: 'ASC', companies: props.companies },
+      variables: { req: getRequest, sort: props.priceSort, companies: props.companies },
       onCompleted: data => {
         console.log(data);
         props.updateCars(data);
@@ -34,7 +36,6 @@ const Cars = (props) => {
 
     const setCompany = (res) => {
         var a = props.companies.indexOf(res.name);
-        localStorage.setItem('page', 1);
         if(a < 0 && !res.delete) {
           props.updateCompanies([props.companies, res.name].flat());
         localStorage.setItem('companies', JSON.stringify([props.companies, res.name].flat()))
@@ -47,7 +48,10 @@ const Cars = (props) => {
         }
       };
 
-
+      const setFilter = (res) => {
+        props.updatePriceSort(res);
+        localStorage.setItem('sort', res);
+      };      
 
     console.log(props.cars);
     console.log(props.suppliers);
@@ -63,7 +67,11 @@ const Cars = (props) => {
                         <Col span={6}>
                          </Col>
                         <Col span={18} className="search-result ab-pad">
-                        <Filter suppliers={dataR.suppliers} companies={props.companies} setCompany={setCompany}></Filter>
+                            <Filter suppliers={dataR.suppliers} companies={props.companies} setCompany={setCompany}></Filter>
+                            <Found amount={props.cars.cars} filter={props.priceSort} setFilter={setFilter}/>
+                            <div className="grid">
+                                <CarInfo data={props.cars.cars} suppliers={dataR.suppliers}/>
+                            </div>
                        </Col>
                     </Row>
                     </div>
@@ -77,8 +85,9 @@ const MapStateToProps = (state) => {
     return {
     cars: state.cars,
     suppliers: state.suppliers,
-    companies: state.companies.companies
+    companies: state.companies.companies,
+    priceSort: state.priceSort.sort
   };
   };
 
-export default connect(MapStateToProps, {updateCars, updateSuppliers, updateCompanies})(Cars);
+export default connect(MapStateToProps, {updateCars, updateSuppliers, updateCompanies, updatePriceSort})(Cars);

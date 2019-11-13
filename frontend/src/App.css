@@ -170,6 +170,18 @@ html #content-short, body #content-short {
   right: 8px;
 }
 
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "car-rental-font" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .swiper-wrapper {
   transform: translate3d(0px, 0px, 0px);
 }
@@ -342,4 +354,323 @@ html #content-short, body #content-short {
   font-size: 13px;
   text-align: right;
   white-space: normal;
+}
+
+.search-result .found {
+  display: table;
+  width: 100%;
+  margin-bottom: 13px;
+}
+
+.search-result h1 {
+  margin: 0;
+  padding: 5px 10px 25px 10px;
+  font-size: 20px;
+  color: #333333;
+  font-weight: 700;
+}
+
+.search-result .found h1, .search-result .found .sorting {
+  display: block;
+  float: left;
+  width: 50%;
+}
+
+.search-result .found h1, .search-result .found h1.ipad-title {
+  margin: 0;
+  padding: 10px 0 6px 10px;
+  line-height: 1;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.search-result .found h1 span.amount, .search-result .found h1.ipad-title span.amount {
+  font-weight: 700;
+  color: #333333;
+}
+
+.search-result .found .sorting {
+  height: 34px;
+}
+
+.search-result .found h1, .search-result .found .sorting {
+  display: block;
+  float: left;
+  width: 50%;
+}
+
+.sorting .label {
+  margin: 0;
+    float: right;
+    height: 34px;
+    padding: 11px 10px 6px 0;
+    font-size: 15px;
+    line-height: 1;
+    display: inline-block;
+    max-width: 100%;
+    font-weight: bold;
+}
+
+.drop-menu {
+  float: right;
+    width: 207px;
+    height: 34px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.drop-button {
+  position: relative !important;
+  width: 207px !important;
+  height: 34px !important;
+  padding-left: 12px !important;
+  font-size: 14px !important;
+  text-align: left !important;
+  border: 1px solid #b2b2b2 !important;
+  background: #FFFFFF !important;
+  box-shadow: none !important;
+  border-radius: 3px !important;
+}
+
+.search-result .auto {
+  position: relative;
+  display: block;
+  width: 100%;
+  background: #f8f8f8;
+  border: 1px solid #cecfd3;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  margin-bottom: 21px;
+}
+
+.search-result .auto .main, .search-result .auto .tabs, .search-result .auto .bottom-car-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-result .auto .main {
+  width: 100%;
+  display: table;
+  background: #FFFFFF;
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  -ms-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+}
+
+.search-result .auto .main .pic {
+  float: left;
+  align-self: center;
+  padding: 10px;
+}
+
+.search-result .auto .main .pic .preview {
+  display: table;
+  width: 100%;
+  text-align: center;
+}
+
+.search-result .auto .main .pic .preview a {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.search-result .auto .main .pic .preview a img {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+  width: 100%;
+  border: none;
+}
+
+.search-result .auto .main .about {
+  float: left;
+  width: 38%;
+  padding: 10px 0 10px 10px;
+  text-align: left !important;
+}
+
+.search-result .auto .main .about label {
+  width: 100%;
+  padding: 8px 0 6px 0;
+  font-size: 18px;
+  line-height: 0.9;
+}
+
+.search-result .auto .main .about label a {
+  color: #333333;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.search-result .auto .main .about label span.similar {
+  font-weight: normal;
+  color: #666666;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.search-result .auto .main .about span.car-class {
+  display: block;
+  padding: 0 0 15px 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #666666;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.search-result .auto .main .about .overall, .search-result .auto .main .about .options {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.search-result .auto .main .about .options .item {
+  display: block;
+  position: relative;
+  padding: 2px 0 3px 24px;
+}
+
+.air-cond-icon {
+  font-size: 17px;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+
+.search-result .auto .main .about .overall {
+  padding: 14px 0 4px 0;
+}
+
+.search-result .auto .main .about .overall, .search-result .auto .main .about .options {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.search-result .auto .main .about .overall i.separate {
+  margin: 0 6px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+  width: 1px;
+  height: 14px;
+  background: #cecfd3;
+}
+
+.search-result .auto .main .price {
+  float: left;
+  position: relative;
+  width: 28%;
+  padding: 52px 15px 10px 0;
+  text-align: right;
+}
+
+.search-result .auto .main .price span.amount {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.search-result .auto .main .price span {
+  display: block;
+  line-height: 1;
+}
+
+.search-result .auto .tabs {
+  width: 100%;
+  flex-wrap: nowrap;
+  display: table;
+  border-top: 1px solid #dae2e8;
+  border-bottom: 1px solid #dae2e8;
+  padding: 0px !important;
+
+}
+
+.search-result .auto .tabs span.tab {
+  align-self: flex-start;
+  position: relative;
+  float: left;
+  height: 42px;
+  padding-left: 34px;
+  line-height: 0.9;
+  color: #666666;
+  font-size: 14px;
+  border-right: 1px solid #dae2e8;
+}
+
+.search-result .auto .tabs span.supplier {
+  width: 34%;
+  padding-left: 105px;
+  color: #328ce5;
+  font-weight: 700;
+}
+
+.search-result .auto .tabs span.tab:last-child {
+  border-right: none;
+}
+
+.search-result .auto .tabs span.supplier img {
+  position: absolute;
+  left: 15px;
+  top: 5px;
+  width: 80px;
+  height: 32px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.search-result .auto .tabs span.tab span {
+  display: table-cell;
+  vertical-align: middle;
+  height: 42px;
+  position: relative;
+}
+
+.search-result .auto .tabs span.tab span {
+  display: table-cell;
+  vertical-align: middle;
+  height: 42px;
+  position: relative;
+}
+
+.search-result .auto .tabs span.supplier span.score {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+  height: inherit;
+  padding: 10px 8px 0 0;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.search-result .auto .tabs span.tab span {
+  display: table-cell;
+  vertical-align: middle;
+  height: 42px;
+  position: relative;
+}
+
+.search-result .auto .tabs span.supplier span.score span.out-of-ten {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+  font-weight: normal;
+  padding-top: 4px;
+  font-size: 15px;
+  text-decoration: none;
 }
