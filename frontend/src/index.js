@@ -9,6 +9,8 @@ import * as serviceWorker from './serviceWorker';
 import App from './App.jsx';
 import './index.css';
 import 'antd/dist/antd.css';
+import store from './redux/index';
+import {Provider} from 'react-redux';
 const cache = new InMemoryCache() 
 const client = new ApolloClient({
   cache,
@@ -20,11 +22,13 @@ const client = new ApolloClient({
 ReactDOM.render(
     <BrowserRouter>
       <ApolloProvider client={client}>
-      <div id="wrap">
-          <div id="content-short">
-            <App />
-          </div>
-      </div>
+        <Provider store={store}>
+            <div id="wrap">
+                <div id="content-short">
+                    <App />
+                </div>
+            </div>
+        </Provider>
       </ApolloProvider>
     </BrowserRouter>, document.getElementById('root'));
   serviceWorker.unregister();
