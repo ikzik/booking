@@ -20,16 +20,15 @@ const client = new ApolloClient({
 })
 
 ReactDOM.render(
-    <BrowserRouter>
-      <ApolloProvider client={client}>
-        <Provider store={store}>
-            <div id="wrap">
-                <div id="content-short">
-                    <App />
-                </div>
-            </div>
-        </Provider>
-      </ApolloProvider>
-    </BrowserRouter>, document.getElementById('root'));
-  serviceWorker.unregister();
-  
+  <BrowserRouter>
+    <ApolloProvider client={client}>
+    <Provider store={store}>
+    <div id="wrap">
+        <div id="content-short">
+          <App />
+        </div>
+    </div>
+    </Provider>
+    </ApolloProvider>
+  </BrowserRouter>, document.getElementById('root'));
+serviceWorker.unregister();
