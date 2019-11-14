@@ -68,7 +68,7 @@ const Cars = (props) => {
     if(props.cars.cars === undefined || loadingR || loading) {return <p>Loading...</p>}
     if(error) return <button onClick={() => refetch()}>Retry</button>
     return (
-        <React.Fragment>
+        <>
             <Header/>
             <div id='bcrm_container'>
                 <div id="bcrm_search_result" className="step2"> 
@@ -88,7 +88,7 @@ const Cars = (props) => {
                     </div>
                 </div>
             </div>
-        </React.Fragment>
+        </>
     )
 }
 

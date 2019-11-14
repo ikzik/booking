@@ -26,14 +26,14 @@ const gridStyle = {
 
 const CarInfo = ({data, suppliers}) => {
     return (
-        <React.Fragment>
+        <>
         {data.cars.items.map(car => (
         <Card className="auto       car bcrm_car" key={car.id}>
             <Card.Grid className="main" style={gridStyle} hoverable={false}> 
                 <Col span={8} className="pic">
                     <div className="preview">
                         <a href="#" className="bcrm_select_car">
-                            <img onError={(e)=>{e.target.onerror = null; e.target.src="/public/img/no-car-image.png"}} className="img-responsive" src={car.imageUrl !== null ? car.imageUrl : 'public/img/no-car-image.png'} alt={car.name}/>
+                            <img onError={(e)=>{e.target.onerror = null; e.target.src="/img/no-car-image.png"}} className="img-responsive" src={car.imageUrl !== null ? car.imageUrl : '/img/no-car-image.png'} alt={car.name}/>
                         </a>
                     </div>
                 </Col>
@@ -67,25 +67,25 @@ const CarInfo = ({data, suppliers}) => {
                     </div>
                     <div className="overall">
                         {car.seats !== null &&
-                        <React.Fragment>{car.seats + ' '}
+                        <>{car.seats + ' '}
                         <span className="title">Seats </span>
-                        </React.Fragment>
+                        </>
                         }
                         {(car.doors !== null || car.bigSuitcases !== null) && car.seats !== null &&
                         <i className="separate"/>
                         }
                         {car.doors !== null &&
-                        <React.Fragment>{car.doors + ' '}
+                        <>{car.doors + ' '}
                         <span className="title">Doors </span>
-                        </React.Fragment>
+                        </>
                         }
                         {car.doors !== null && car.bigSuitcases !== null &&
                         <i className="separate"/>
                         }
                         {car.bigSuitcases !== null &&
-                        <React.Fragment>{car.bigSuitcases + ' '}
+                        <>{car.bigSuitcases + ' '}
                         <span className="title">Baggage </span>
-                        </React.Fragment>
+                        </>
                         }
                     </div>
                 </Col>
@@ -108,7 +108,7 @@ const CarInfo = ({data, suppliers}) => {
             </Card.Grid>
         </Card>
         ))}
-        </React.Fragment>
+        </>
     );
 }
 
