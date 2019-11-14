@@ -55,7 +55,7 @@ html #content-short, body #content-short {
   *display: inline;
   width: 144px;
   height: 24px;
-  background: url(/img/economy_bookings_logo.svg?1208) no-repeat;
+  background: url(/public/img/economy_bookings_logo.svg?1208) no-repeat;
   background-size: auto 24px;
 }
 
